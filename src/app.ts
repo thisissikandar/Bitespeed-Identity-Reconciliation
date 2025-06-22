@@ -6,7 +6,9 @@ const app = express();
 app.use(express.json());
 
 app.use('/identify', identifyRouter);
-
+app.get('/', (req, res) => {
+  res.send('Welcome to the Identify API');
+})
 app.use(errorHandler);
 
 export default app;
